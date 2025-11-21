@@ -1,0 +1,13 @@
+{% extends 'accounts/base_auth.html' %}
+
+{% block title %}Profile | MerchMint{% endblock %}
+
+{% block content %}
+<h2>Your Profile</h2>
+
+<p><strong>Name:</strong> {{ user.first_name }} {{ user.last_name }}</p>
+<p><strong>Email:</strong> {{ user.email }}</p>
+
+<a href="{% url 'edit_profile' %}">Edit Profile</a>
+<a href="{% url 'logout' %}">Logout</a>
+{% endblock %}
