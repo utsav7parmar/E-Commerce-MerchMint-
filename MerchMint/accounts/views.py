@@ -39,7 +39,7 @@ def register(request):
         messages.success(request, "Registration successful! Please login.")
         return redirect("login")
 
-    return render(request, "register.html")
+    return render(request, "accounts/register.html")
 
 # LOGIN USER
 
@@ -61,7 +61,7 @@ def login_view(request):
             messages.error(request, "Invalid credentials.")
             return redirect("login")
 
-    return render(request, "login.html")
+    return render(request, "accounts/login.html")
 
 # PROFILE PAGE
 
@@ -71,7 +71,7 @@ def profile(request):
         return redirect("login")
 
     user = User.objects.get(id=user_id)
-    return render(request, "profile.html", {"user": user})
+    return render(request, "accounts/profile.html", {"user": user})
 
 # EDIT PROFILE
 
@@ -96,7 +96,7 @@ def edit_profile(request):
         messages.success(request, "Profile updated successfully.")
         return redirect("profile")
 
-    return render(request, "edit_profile.html", {"user": user})
+    return render(request, "accounts/edit_profile.html", {"user": user})
 
 # FORGOT PASSWORD
 
@@ -120,7 +120,7 @@ def forgot_password(request):
         messages.success(request, f"Your OTP is: {otp}")  # temporary
         return redirect("reset_password")
 
-    return render(request, "forgot_password.html")
+    return render(request, "accounts/forgot_password.html")
 
 # RESET PASSWORD PAGE
 
@@ -147,7 +147,7 @@ def reset_password(request):
         messages.success(request, "Password reset successful.")
         return redirect("login")
 
-    return render(request, "reset_password.html")
+    return render(request, "accounts/reset_password.html")
 
 # LOGOUT USER
 
