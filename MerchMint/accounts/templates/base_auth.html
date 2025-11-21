@@ -3,10 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}Auth | MerchMint{% endblock %}</title>
+    <title>{% block title %}MerchMint Auth{% endblock %}</title>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-    <div class="auth-container">
+
+<body class="min-h-screen bg-gray-100 flex items-center justify-center px-4">
+    <div class="w-full max-w-md bg-white shadow-xl rounded-xl p-8">
+        <h1 class="text-center text-3xl font-bold text-indigo-600 mb-6">MerchMint</h1>
+
         {% block content %}
         {% endblock %}
     </div>

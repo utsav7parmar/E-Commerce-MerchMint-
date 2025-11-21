@@ -3,7 +3,17 @@
 {% block title %}Verify Email{% endblock %}
 
 {% block content %}
-<h2>Verify Your Email</h2>
-<p>We’ve sent a verification link to <strong>{{ email }}</strong>.</p>
-<p>Please check your inbox.</p>
+<h2 class="text-xl font-semibold mb-4 text-gray-700">Verify Email</h2>
+
+<p class="text-gray-600">
+    We’ve sent a verification link to:
+</p>
+
+<p class="text-indigo-600 font-semibold mt-2">
+    {{ email }}
+</p>
+
+<p class="mt-4 text-sm text-gray-600">
+    Please check your inbox and click the verification link.
+</p>
 {% endblock %}

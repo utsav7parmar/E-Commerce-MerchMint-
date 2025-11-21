@@ -3,14 +3,21 @@
 {% block title %}Edit Profile{% endblock %}
 
 {% block content %}
-<h2>Edit Profile</h2>
+<h2 class="text-xl font-semibold mb-4 text-gray-700">Edit Profile</h2>
 
-<form method="POST">
+<form method="POST" class="space-y-4">
     {% csrf_token %}
     {{ form.as_p }}
 
-    <button type="submit">Update Profile</button>
+    <button 
+        type="submit"
+        class="w-full bg-indigo-600 hover:bg-indigo-700 text-white py-2 rounded-lg transition">
+        Save Changes
+    </button>
 </form>
 
-<a href="{% url 'profile' %}">Back</a>
+<a href="{% url 'profile' %}"
+   class="block text-center mt-4 text-indigo-600 underline">
+   Back to Profile
+</a>
 {% endblock %}
